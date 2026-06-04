@@ -5,21 +5,30 @@
 }
 
 :root {
-    --primary-color: #7c3bed;
-    --secondary-color: #f9fcff;
-    --text-color: #111827;
-    --text-color-secondary: #4b5563;
-    --border-color: #e5e7eb;
-    --border-color-secondary: #f5d1b9;
-    --background-color: #f9fcff;
-    --background-color-secondary: #ececf0;
+    --primary-color: #7c3bed;        
+    --primary-hover: #6d28d9;          
+    --secondary-color: #f9fcff;       
+
+    --text-color: #111827;             
+    --text-color-secondary: #4b5563;  
+    --text-muted: #5c6b73;              
+    --text-placeholder: #9aa5b1;        
+
+    --background-color: #f9fcff;       
+    --background-color-secondary: #ececf0; 
+    --surface-white: #ffffff;          
+
+    --border-color: #e5e7eb;         
+    --border-color-secondary: #f5d1b9; 
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    background-color: var(--background-color);
-    color: var(--text-color);
+@font-face {
+    font-family: P1;
+    src: url(/assets/fonts/Poppins-Bold.ttf);
+}
+@font-face {
+    font-family: P2;
+    src: url(/assets/fonts/Poppins-Regular.ttf);
 }
 
 .container {
@@ -71,9 +80,9 @@ div.navbar nav ul.links li {
 
 div.navbar nav ul.links li a {
     text-decoration: none;
-    color: var(--text-color-secondary);
+    color: var(--text-color);
     font-size: 14px;
-    font-family: 'Inter', sans-serif;
+    font-family: P2;
     font-weight: 400;
     transition: all 0.5s ease-in-out;
     border-bottom: solid 1.5px transparent;
@@ -81,7 +90,7 @@ div.navbar nav ul.links li a {
 
 div.navbar nav ul.links li a:hover {
     color: var(--text-color-secondary);
-    border-bottom: solid 1.5px var(--primary-color);
+    border-bottom: solid 1.5px var(--primary-hover);
 }
 
 div.navbar nav ul.links li a.B {
@@ -100,7 +109,7 @@ div.navbar nav div.right-side {
 
 div.navbar nav div.right-side div.searchinput input {
     width: 260px;
-    font-family: 'Inter', sans-serif;
+    font-family: P2;
     outline: none;
     border: none;
     border-radius: 10px;
@@ -137,9 +146,137 @@ div.navbar nav div.right-side div.profile {
 }
 
 div.navbar nav div.right-side div.profile i {
-    color: var(--border-color-secondary);
+    color: var(--border-color);
     font-size: 18px;
 }
+
+  /* Hero style */
+  section.Bookly_hero{
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    padding: 5% 0px;
+   
+ }
+ section.Bookly_hero div.parts{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-flow: nowrap row;
+ }
+ section.Bookly_hero div.parts div.p{
+    width: calc(95% / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section.Bookly_hero div.parts div.p.left h1{
+    font-size: 52px;
+    color: var(--text-color);
+    font-family: P1;
+    font-weight: bold;
+    line-height: 1.1;
+    margin: 15px 0px;
+}
+section.Bookly_hero div.parts div.p.left h1 span{
+    color: var(--primary-color);
+}
+section.Bookly_hero div.parts div.p.left p{
+    font-size: 13px;
+    color: var(--text-muted);
+    font-family: P2;
+    margin: 15px 0px;
+}
+section.Bookly_hero div.parts div.p.left div.right-side {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: nowrap row;
+    margin: 25px 0px;
+}
+
+section.Bookly_hero div.parts div.p.left div.right-side div.searchinput input {
+    width: 260px;
+    font-family: P2;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--text-muted);
+    background-color: var(--background-color-secondary);
+    padding: 10px 16px 10px 45px;
+    box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.2);
+
+}
+section.Bookly_hero div.parts div.p.left div.right-side div.searchinput input::placeholder{
+    color: var(--text-placeholder);
+    opacity: 1;
+}
+
+section.Bookly_hero div.parts div.p.left div.right-side div.searchinput {
+    position: relative;
+}
+
+section.Bookly_hero div.parts div.p.left div.searchinput i {
+    position: absolute;
+    color: var(--text-placeholder);
+    font-size: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+}
+section.Bookly_hero div.parts div.p.left div.btn_Hero{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: nowrap row;
+}
+section.Bookly_hero div.parts div.p.left div.btn_Hero button{
+    width: 50%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: var(--surface-white);
+    margin: 15px 10px;
+    border-radius: 10px;
+    padding: 10px 0px;
+    font-family: P2;
+    cursor: pointer;
+}
+section.Bookly_hero div.parts div.p.right{
+    height: auto;
+    padding: 10px;
+  
+}
+section.Bookly_hero div.parts div.p.right div{
+    width: 100%;
+    height: 100%; 
+}
+section.Bookly_hero div.parts div.p.right img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive Design: */
 @media (min-width: 481px) and (max-width: 767px) {
