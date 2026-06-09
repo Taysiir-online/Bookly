@@ -16,6 +16,8 @@
 
     --background-color: #f9fcff;       
     --background-color-secondary: #ececf0; 
+    --background-color-ternary:  #2b5c57; 
+    --background-color-forth:  #638d93; 
     --surface-white: #ffffff;          
 
     --border-color: #e5e7eb;         
@@ -261,17 +263,183 @@ section.Bookly_hero div.parts div.p.right img{
     border-radius: 10px;
 }
 
+   /* Books Style */
+section.Books{
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    padding: 3% 0px;
+}
+section.Books div.latest{
+    width: 100%;
+    height: 100%;
+}
+section.Books div.latest div.titles h2{
+   font-size: 30px;
+   font-family: P2;
+   font-weight: bold;
+   color: var(--text-color);
+   padding: 10px 0px;
+}
+section.Books div.latest div.titles p{
+    font-size: 13px;
+    color: var(--text-muted);
+    font-family: P2;
+}
+section.Books div.latest div.btns{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px 0;
+}
+section.Books div.latest div.btns button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+section.Books div.latest div.btns button a{
+    color: var(--primary-color);
+    font-family: P2;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+section.Books div.latest div.btns button a:hover{
+    color: var(--primary-hover);
+}
+section.Books div.latest div.btns button a:hover i{
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
 
+  /* card-grid */
+section.Books div.latest div.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    font-family: P2;
+    padding: 10px 0;
+}
+section.Books div.latest div.grid div.book-card {
+    background: var(--background-color);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+section.Books div.latest div.grid div.book-card div.cover-box {
+    height: 280px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+section.Books div.latest div.grid div.book-card div.cover-box span.lang {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--background-color);
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    z-index: 5;
+}
+section.Books div.latest div.grid div.book-card div.cover-box div.cover-details {
+    width: 150px;
+    height: 210px;
+    border-radius: 4px;
+    overflow: hidden; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+    display: flex;
+}
+section.Books div.latest div.grid div.book-card div.cover-box div.cover-details img.book-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.bg-color1 { 
+    background-color: var(--background-color); 
+}
+.bg-color2   { 
+    background-color: var(--background-color-ternary); 
+}
+.bg-color3    { 
+    background-color: var(--background-color); 
+}
+.bg-color4    { 
+    background-color: var(--background-color-forth); 
+}
+section.Books div.latest div.grid div.book-card div.book-info {
+    padding: 15px;
+}
+section.Books div.latest div.grid div.book-card div.book-info h3 { 
+    margin: 0 0 5px 0; 
+    font-size: 16px; 
+    color: var(--text-color); 
+}
+section.Books div.latest div.grid div.book-card div.book-info p.author { 
+    margin: 0 0 15px 0; 
+    font-size: 13px; 
+    color: var(--text-muted); 
+}
 
-
-
-
-
-
-
-
-
-
+section.Books div.latest div.grid div.book-card div.book-info div.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+section.Books div.latest div.grid div.book-card div.book-info div.card-footer span{
+    font-size: 10px; 
+    color: var(--text-muted); 
+}
+section.Books div.latest div.grid div.book-card div.book-info div.card-footer button {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+section.Books div.latest div.grid div.book-card div.book-info div.card-footer button:hover {
+    background: var(--background-color-secondary);
+}
+section.Books div.latest div.load-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+section.Books div.latest div.load-section button.load{
+    background-color: var(--background-color-secondary);
+    color: var(--text-color);
+    border: none;
+    font-size: 12px;
+    font-family: P2;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+section.Books div.latest div.load-section button.load:hover{
+    background-color: var(--background-color-secondary);
+}
 
 
 
