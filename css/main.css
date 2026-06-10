@@ -442,6 +442,102 @@ section.Books div.latest div.load-section button.load:hover{
 }
 
 
+  /* footer style */
+footer.footer{
+    background-color: var(--background-color);
+    padding: 80px 0 30px 0;
+    font-family: P2;
+}
+footer.footer div.ftr{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-bottom: 40px;
+}
+footer.footer div.ftr div.ft-left{
+    flex: 1;
+    min-width: 280px;
+    max-width: 450px;
+}
+footer.footer div.ftr div.ft-left div.ft-logo{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+footer.footer div.ftr div.ft-left div.ft-logo img{
+    height: 24px;
+    width: auto;
+}
+footer.footer div.ftr div.ft-left span{
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--primary-color);
+    vertical-align: middle;
+}
+footer.footer div.ftr div.ft-left p{
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+footer.footer div.ftr div.ft-rigth{
+    display: flex;
+    gap: 230px;
+    flex-wrap: wrap;
+}
+footer.footer div.ftr div.ft-rigth div.ft-links{
+    min-width: 140px;
+}
+footer.footer div.ftr div.ft-rigth div.ft-links h4{
+    color: var(--text-color);
+    font-size: 16px;
+    text-transform: capitalize;
+    margin: 0 0 15px 0;
+}
+footer.footer div.ftr div.ft-rigth div.ft-links ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+footer.footer div.ftr div.ft-rigth div.ft-links ul li{
+    margin-bottom: 10px;
+}
+footer.footer div.ftr div.ft-rigth div.ft-links ul li a{
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+footer.footer div.ftr div.ft-rigth div.ft-links ul li a:hover{
+    color: var(--text-placeholder);
+}
+footer.footer div.ft-bottom{
+   border-top: 1px solid var(--background-color-secondary);
+   padding-top: 10px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 15px;
+}
+footer.footer div.ft-bottom p.copy{
+    color: var(--text-muted);
+    font-size: 12px;
+    margin: 0;
+}
+footer.footer div.ft-bottom div.icons{
+    display: flex;
+    gap: 15px;
+}
+footer.footer div.ft-bottom div.icons span.icon{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    font-size: 12px;
+    color: var(--text-placeholder);
+}
+
 
 
 
