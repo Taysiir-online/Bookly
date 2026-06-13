@@ -718,10 +718,201 @@ p.copy{
 }
 
 
+    /* Register form style  */
+header.logo-container {
+    padding: 10px;
+}
+header.logo-container div.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+header.logo-container div.logo img {
+    height: 35px;
+    width: auto;
+}
+header.logo-container span {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: P2;
+    color: var(--primary-color);
+    /* vertical-align: middle; */
+}
 
+           /* form */
+main.main-box{
+   display: flex;
+    justify-content: center;    
+    align-items: center;
+    flex-grow: 1;
+    padding: 10px;
+}
+main.main-box div.card{
+    background-color: var(--background-color);
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.2);
+    text-align: center;
+}
+main.main-box div.card h2{
+    font-size: 24px;
+    font-family: P1;
+    font-weight: 700;
+    display: flex;
+    justify-content: flex-start;
+    color: var(--text-color);
+    margin-bottom: 6px;
+}
+main.main-box div.card p.card-text{
+    font-size: 13px;
+    color: var(--text-muted);
+    font-family: P2;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 24px;
 
+}
+div.box label{
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    color: var(--text-color-secondary);
+    font-weight: 600;
+    font-family: P2;
+    padding: 10px 0;
+    margin-bottom: 6px;
+}
+div.box div.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.box div.row a.link-pass{
+    font-size: 12px;
+    font-family: P2;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+div.box div.field{
+    position: relative;
+}
+div.box div.field i{
+    position: absolute;
+    color: var(--text-placeholder);
+    font-size: 14px;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+}
+div.box div.field i.eye-icon{
+    position: absolute;
+    color: var(--text-placeholder);
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    right: 14px;
+}
+div.box div.field input{
+    width: 100%;
+    padding: 11px 11px 11px 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    outline: none;
+    font-family: P2;
+    font-size: 13px;
+    background-color: var(--background-color-secondary);
+    color: var(--text-color);
+}
+div.box div.field input::placeholder{
+    font-family: P2;
+    font-size: 12px;
+}
+div.box div.field input:focus{
+    border-color: var(--primary-color);
+    background-color: var(--background-color);
+}
+button.btn{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: var(--surface-white);
+    font-family: P2;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    gap: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+div.line{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0;
+}
+div.line::before{
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: var(--border-color);
+    z-index: 1;
+}
+div.line span{
+  background-color: var(--background-color);
+  padding: 0 10px;
+  color: var(--text-muted);
+  font-size: 12px;
+  z-index: 2;
 
-
+}
+p.reg-text{
+    font-size: 13px;
+    color: var(--text-muted);
+    font-family: P2;
+    margin-top: 15px;
+}
+p.reg-text a{
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+ /* footer */
+section.footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}   
+section.footer div.Links{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+section.footer div.Links a{
+    color: var(--text-muted);
+    font-family: P2;
+    font-size: 12px;
+    text-decoration: none;  
+    transition: color 0.2s ease;    
+} 
+section.footer div.Links a:hover{
+    color: var(--text-placeholder);
+}
+p.Copy{
+    display: flex;
+    justify-content: flex-start;
+    color: var(--text-muted);
+    font-family: P2;
+    font-size: 12px;
+    margin: 0;
+}
 
 
 
