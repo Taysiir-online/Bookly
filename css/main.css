@@ -484,6 +484,18 @@ footer.footer div.ftr div.ft-left p{
     line-height: 1.6;
     margin-top: 15px;
 }
+footer.footer div.ftr div.ft-left div.icons{
+    display: flex;
+    gap: 15px;
+}
+footer.footer div.ftr div.ft-left div.icons span i{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    font-size: 18px;
+    color: var(--text-placeholder);
+    margin-top: 20px;
+}
 footer.footer div.ftr div.ft-rigth{
     display: flex;
     gap: 230px;
@@ -539,6 +551,84 @@ footer.footer div.ft-bottom div.icons span.icon{
     font-size: 12px;
     color: var(--text-placeholder);
 }
+footer.footer div.ft-bottom div.links{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+ }
+ footer.footer div.ft-bottom div.links a{
+    color: var(--text-muted);
+    font-family: P2;
+    font-size: 12px;
+    text-decoration: none;  
+    transition: color 0.2s ease;
+ }
+footer.footer div.ftr div.ft-rigth div.newsletter{
+    max-width: 260px;
+}
+ footer.footer div.ftr div.ft-rigth div.newsletter h4{
+    color: var(--text-color);
+    font-family: P2;
+    font-size: 16px;
+    margin: 0 0 15px 0;
+ } 
+ footer.footer div.ftr div.ft-rigth 
+ div.newsletter p.newsletter-text{
+    color: var(--text-muted);
+    font-family: P2;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+
+ } 
+ footer.footer div.ftr div.ft-rigth 
+ div.newsletter form.newsletter-form{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ }
+  footer.footer div.ftr div.ft-rigth 
+ div.newsletter input.newsletter-input{
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: P2;
+    color: var(--text-color);
+    background-color: var(--background-color-secondary);
+    outline: none;
+}
+ footer.footer div.ftr div.ft-rigth 
+ div.newsletter button.newsletter-btn{
+    padding: 10px 16px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--surface-white);
+    font-size: 14px;
+    font-family: P2;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+}
+footer.footer div.ftr div.ft-rigth 
+ div.newsletter button.newsletter-btn:hover{
+    background-color: var(--primary-hover);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /* Login form style */
 
@@ -933,7 +1023,7 @@ section.search header.head div.head-left h2{
     font-size: 20px;
     font-family: P1;
     color: var(--text-color);
-      margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 section.search header.head div.head-left p{
     font-size: 13px;
@@ -1149,6 +1239,16 @@ section.search section.previous span.dots{
 }
 
      
+
+
+
+
+
+
+
+
+
+
 
 
 /* Responsive Design: */
