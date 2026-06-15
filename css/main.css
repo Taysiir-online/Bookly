@@ -1240,15 +1240,248 @@ section.search section.previous span.dots{
 
      
 
+    /* Book Detail style */
+section.book-container{
+    display: flex;
+    gap: 40px;
+    max-width: 900px;
+    background-color: var(--surface-white);
+    padding: 70px 20px;
+    border-radius: 12px;
+    align-items: center;
+}
+section.book-container div.book-cover{
+    flex: 1;
+    max-width: 300px;
+    /* background-color: var(--background-color);
+    paddind: 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--box-shadow); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+section.book-container div.book-cover img{
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px var(--box-shadow);
+    display: block;
+}
+section.book-container div.book-details{
+    flex: 2;
+}
+section.book-container div.book-details nav.library{
+    font-size: 13px;
+    font-family: P2;
+    color: var(--primary-hover);
+    margin-bottom: 12px;
+}
+section.book-container div.book-details nav i{
+    font-size: 10px;
+    padding: 0px 5px;
+}
+section.book-container div.book-details h1.title{
+    font-size: 36px;
+    color: var(--text-color);
+    font-family: P2;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+section.book-container div.book-details h3.author{
+    font-size: 20px;
+    color: var(--primary-color);
+    font-family: P2;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+section.book-container div.book-details div.book-meta{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+} 
+section.book-container div.book-details 
+div.book-meta span.meta{
+   background-color: var(--background-color-secondary);
+   color: var(--primary-color);
+   padding: 6px 14px;
+   border-radius: 20px;
+   font-size: 13px;
+   font-family: P2;
+   font-weight: 500;
+} 
+section.book-container div.book-details 
+div.book-meta span.meta i{
+    font-size: 12px;
+    color: var(--primary-color);
+    padding: 0px 5px;
+}
+section.book-container div.book-details div.book-subject{
+   margin-bottom: 25px;
+}
+section.book-container div.book-details div.book-subject
+span.sub-title{
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: P2;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    color: var(--text-muted);
+}
+section.book-container div.book-details 
+div.book-subject div.sub-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+section.book-container div.book-details 
+div.book-subject div.sub-tags span{
+    border: none;
+    outline: none;
+    border: 2px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-family: P2;
+}
+section.book-container div.book-details div.book-actions{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+section.book-container div.book-details 
+div.book-actions a.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: P2;
+    font-weight: 600;
+    text-decoration: none;
+    transition: bacground 0.2s ease;
+}
+section.book-container div.book-details 
+div.book-actions a i{
+    font-size: 12px;
+    color: var(--surface-white);
+    padding: 0px 5px;
+}
+section.book-container div.book-details 
+div.book-actions a.primary{
+    background-color: var(--primary-color);
+    color: var(--surface-white);
+}
+section.book-container div.book-details 
+div.book-actions a.secondary{
+    background-color: var(--background-color-secondary);
+    color: var(--primary-color);
+}
+section.book-container div.book-details 
+div.book-actions a i.fa-regular{
+    color: var(--primary-color);
+}
+div.About{
+    background-color: var(--background-color-secondary);
+    padding: 40px;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+div.About h2{
+    font-size: 24px;
+    color: var(--text-color);
+    font-family: P2;
+    font-weight: 800;
+   
+}
+div.About p{
+    font-size: 15px;
+    font-family: P2;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+section.related{
+    width: 100%;
+    margin-top: 40px;
+    padding: 0 10px;
+}
+section.related div.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 30px;
+}
+section.related div.header h2{
+    font-size: 22px;
+    font-family: P2;
+    font-weight: 700;
+    color: var(--text-color);
+}
+section.related div.header a{
+    font-size: 13px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: P2;
+    font-weight: 600;
+}
 
-
-
-
-
-
-
-
-
+section.related div.header a:hover{
+    text-decoration: underline;
+}
+section.related div.books-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+section.related div.books-grid div.book-card{
+    display: flex;
+    flex-direction: column;
+}
+section.related div.books-grid div.book-card div.card-img{
+    width: 100%;
+    aspect-ratio: 2 / 2.8;
+    background-color: var(--background-color-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px var(--box-shadow);
+}
+section.related div.books-grid div.book-card div.card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+section.related div.books-grid div.book-card h4{
+    font-size: 13px;
+    color: var(--text-color);
+    font-family: P2;
+    font-weight: bold;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+section.related div.books-grid div.book-card span{
+     font-size: 11px;
+    color: var(--primary-color);
+    font-family: P2;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+section.related div.books-grid div.book-card span.span{
+    font-size: 10px;
+    color: var(--text-muted);
+    font-family: P2;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+     margin-bottom: 50px;
+}
 
 
 /* Responsive Design: */
