@@ -877,7 +877,7 @@ main.main-box{
     justify-content: center;    
     align-items: center;
     flex-grow: 1;
-    padding: 10px;
+    padding-top: 20px;
 }
 main.main-box div.card{
     background-color: var(--background-color);
@@ -1605,6 +1605,17 @@ section.related div.books-grid div.book-card span.span{
         gap: 25px;
       }
 
+      /* Registration resp */
+       main.main-box{
+        padding-top: 40px;
+      }
+      section.footer{
+        flex-direction: column-reverse;
+        gap: 12px;
+        padding: 15px;
+        text-align: center;
+    }
+
 }
 @media (min-width: 481px) and (max-width: 767px) {
     .container {
@@ -1670,6 +1681,16 @@ section.related div.books-grid div.book-card span.span{
         gap: 25px;
       }
     
+      /* Registration resp */
+      main.main-box{
+        padding-top: 40px;
+      }
+      section.footer{
+        flex-direction: column-reverse;
+        gap: 12px;
+        padding: 15px;
+        text-align: center;
+    }
 
 }
 
