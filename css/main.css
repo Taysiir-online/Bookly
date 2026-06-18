@@ -59,6 +59,7 @@ div.navbar nav {
     grid-template-rows: repeat(1, auto);
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 div.navbar nav div.logo {
@@ -100,6 +101,41 @@ div.navbar nav ul.links li a:hover {
 div.navbar nav ul.links li a.B {
     color: var(--primary-color);
 }
+
+  /* Bar Icon */
+div.bar-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap column;
+}
+div.MobileIcon{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: nowrap column;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* div.MobileNav{
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    padding: 15px 15px;
+    background-color: var(--Cadaan);
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(0px, 30px);
+    transition: all 0.6s  ease-in-out;
+}
+div.MobileNav.Active{
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0px, 0px);
+} */
 
 div.navbar nav div.right-side {
     width: 100%;
@@ -153,6 +189,10 @@ div.navbar nav div.right-side div.profile i {
     color: var(--border-color);
     font-size: 18px;
 }
+
+
+
+
 
   /* Hero style */
   section.Bookly_hero{
@@ -453,7 +493,7 @@ footer.footer{
 footer.footer div.ftr{
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
     gap: 50px;
     padding-bottom: 40px;
@@ -1485,26 +1525,219 @@ section.related div.books-grid div.book-card span.span{
 
 
 /* Responsive Design: */
+@media  (max-width: 480px){
+     .container{
+        max-width: 465px;
+    }
+
+    /* nav resp */
+     div.navbar nav ul.links{
+        display: none;
+    }
+
+    /* Bookly hero resp */
+    section.Bookly_hero div.parts{
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+    }
+    section.Bookly_hero div.parts div.p{
+        width: 100%;
+    }
+    section.Bookly_hero div.parts div.p.left h1{
+        font-size: 40px;
+    }
+    section.Bookly_hero div.parts div.p.left div.right-side{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+         align-items: center;
+         gap: 12px;
+         width: 100%;
+
+    }
+    section.Bookly_hero div.parts div.p.left div.right-side div.searchinput{
+        flex: 1;
+        max-width: 260px;
+    }
+    section.Bookly_hero div.parts div.p.left div.right-side div.searchinpu input{
+        width: 100%;
+    }
+    section.Bookly_hero div.parts div.p.left div.btn_Hero{
+        width: auto;
+    }
+    section.Bookly_hero div.parts div.p.left div.btn_Hero button{
+        width: auto;
+        padding: 10px 16px;
+        margin: 0;
+    }
+
+    /* Book latest resp */
+    section.Books{
+        padding: 8% 0px;
+    }
+    section.Books div.latest div.titles{
+        text-align: center;
+    }
+     section.Books div.latest div.titles h2{
+        font-size: 24px;
+        padding: 5px 0px;
+     }
+     section.Books div.latest div.btns{
+        justify-content: center;
+        margin: 15px 0;
+     }
+     section.Books div.latest div.grid{
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px 15px;
+     }
+     section.Books div.latest div.grid div.book-card div.cover-box{
+        height: 240px;
+        padding: 15px;
+     }
+
+        /* footer resp */
+      footer.footer{
+        padding: 50px 0 20px 0;
+      }  
+      footer.footer div.ftr div.ft-rigth{
+        gap: 25px;
+      }
+
+}
 @media (min-width: 481px) and (max-width: 767px) {
     .container {
-        width: 700px;
+        max-width: 750px;
     }
+    /* nav resp */
+     div.navbar nav ul.links{
+        display: none;
+    }
+    div.navbar nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    div.navbar nav div.right-side{
+         justify-content: flex-end;
+    }
+
+
+
+
+
+    /* Bookly hero resp */
+    section.Bookly_hero div.parts{
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+    }
+    section.Bookly_hero div.parts div.p{
+        width: 100%;
+    }
+    section.Bookly_hero div.parts div.p.left h1{
+        font-size: 40px;
+    }
+    section.Bookly_hero div.parts div.p.left div.right-side{
+        justify-content: center;
+        margin: auto;
+    }
+    section.Bookly_hero div.parts div.p.left div.right-side div.searchinpu input{
+        width: 100%;
+    }
+    section.Bookly_hero div.parts div.p.left div.btn_Hero{
+        width: auto;
+    }
+    section.Bookly_hero div.parts div.p.left div.btn_Hero button{
+        width: auto;
+        padding: 10px 16px;
+        margin: 0 10px;
+    }
+
+      /* Book latest resp */
+    section.Books div.latest div.grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+     }
+
+      /* footer resp */
+      footer.footer{
+        padding: 50px 0 20px 0;
+      }  
+      footer.footer div.ftr div.ft-rigth{
+        gap: 25px;
+      }
+    
+
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 992px) {
     .container {
-        width: 900px;
+        max-width: 960px;
     }
+    /* nav resp */
+    div.bar-icon{
+        display: none;
+    }
+
+
+    /* Bookly hero resp */
+    section.Bookly_hero div.parts div.p.left h1{
+        font-size: 45px;
+    }
+    section.Bookly_hero div.parts div.p.left p{
+        font-size: 11px;
+    }
+    section.Bookly_hero div.parts div.p.left div.right-side div.searchinpu input{
+        width: 100%;
+    }
+    section.Bookly_hero div.parts div.p.left div.btn_Hero{
+        width: auto;
+    }
+    section.Bookly_hero div.parts div.p.left div.btn_Hero button{
+        width: auto;
+        padding: 8px 14px;
+        margin: 0 10px;
+        white-space: nowrap;
+    }
+
+     /* Book latest resp */
+     section.Books div.latest div.grid{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+     }
+
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
     .container {
-        width: 100px;
+        max-width: 1100px;
     }
-}
+     /* nav resp */
+    div.bar-icon{
+        display: none;
+    }
 
-@media (min-width: 1200px) and (max-width: 1400px) {
-    .container {
-        width: 1200px;
+     /* Book her resp */
+      section.Bookly_hero div.parts div.p.left div.btn_Hero button{
+        width: auto;
+        padding: 8px 14px;
+        margin: 0 10px;
+        white-space: nowrap;
     }
+
+}
+@media (min-width: 1200px){
+   .container{
+         max-width: 1150px;
+    }
+
+       /* Nav Responsive */
+     div.bar-icon{
+        display: none;
+    }
+    
+
 }
