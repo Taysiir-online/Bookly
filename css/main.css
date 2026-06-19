@@ -455,6 +455,10 @@ section.Books div.latest div.grid div.book-card div.book-info div.card-footer bu
     cursor: pointer;
     font-weight: 600;
 }
+section.Books div.latest div.grid div.book-card div.book-info div.card-footer button a:nth-child(1){
+    text-decoration: none;
+    color: var(--primary-color);
+}
 section.Books div.latest div.grid div.book-card div.book-info div.card-footer button:hover {
     background: var(--background-color-secondary);
 }
@@ -1204,7 +1208,7 @@ div.book-meta span.downloads{
 }
 section.search 
 main.books-grid 
-div.book-card div.book-info button.view-btn{
+div.book-card div.book-info button.view-btn {
     width: 100%;
     padding: 12px;
     background-color: var(--primary-color); 
