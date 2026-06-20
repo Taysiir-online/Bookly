@@ -102,41 +102,6 @@ div.navbar nav ul.links li a.B {
     color: var(--primary-color);
 }
 
-  /* Bar Icon */
-div.bar-icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: wrap column;
-}
-div.MobileIcon{
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: nowrap column;
-    background-color: var(--primary-color);
-    border-radius: 5px;
-    cursor: pointer;
-}
-/* div.MobileNav{
-    width: 100%;
-    position: absolute;
-    top: 80px;
-    padding: 15px 15px;
-    background-color: var(--Cadaan);
-    visibility: hidden;
-    opacity: 0;
-    transform: translate(0px, 30px);
-    transition: all 0.6s  ease-in-out;
-}
-div.MobileNav.Active{
-    visibility: visible;
-    opacity: 1;
-    transform: translate(0px, 0px);
-} */
-
 div.navbar nav div.right-side {
     width: 100%;
     height: 100%;
@@ -189,6 +154,46 @@ div.navbar nav div.right-side div.profile i {
     color: var(--border-color);
     font-size: 18px;
 }
+
+ /* Bar Icon */
+div.navbar nav div.right-side div.bar-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap column;
+}
+div.navbar nav div.bar-icon div.MobileIcon{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: nowrap column;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* div.MobileNav{
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    padding: 15px 15px;
+    background-color: var(--Cadaan);
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(0px, 30px);
+    transition: all 0.6s  ease-in-out;
+}
+div.MobileNav.Active{
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0px, 0px);
+} */
+
+
+
+
+
 
 
 
@@ -1050,6 +1055,14 @@ p.Copy{
     margin: 0;
 }
 
+
+
+
+
+
+
+
+
       /* Search page Style */
 section.search{
     width: 100%;
@@ -1095,6 +1108,8 @@ section.search header.head div.head-right select.dropdown{
     cursor: pointer;
     outline: none;  
 }
+
+   /* book grid */
 section.search main.books-grid{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -1535,9 +1550,27 @@ section.related div.books-grid div.book-card span.span{
     }
 
     /* nav resp */
+     div.navbar nav{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       width: 100%;
+    }
+    div.navbar nav div.right-side{
+        width: auto;
+        margin: 0;
+        gap: 5px;
+    }
      div.navbar nav ul.links{
         display: none;
     }
+    div.navbar nav div.right-side div.searchinput{
+        display: none;
+    }
+    div.navbar nav div.right-side div.profile{
+        margin: 0 10px;
+    }
+
 
     /* Bookly hero resp */
     section.Bookly_hero div.parts{
@@ -1549,16 +1582,19 @@ section.related div.books-grid div.book-card span.span{
         width: 100%;
     }
     section.Bookly_hero div.parts div.p.left h1{
-        font-size: 40px;
+        font-size: 35px;
+    }
+    section.Bookly_hero div.parts div.p.left p{
+        font-size: 11px;
     }
     section.Bookly_hero div.parts div.p.left div.right-side{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
          align-items: center;
-         gap: 12px;
+         gap: 15px;
          width: 100%;
-
+         padding: 20px;
     }
     section.Bookly_hero div.parts div.p.left div.right-side div.searchinput{
         flex: 1;
@@ -1574,6 +1610,7 @@ section.related div.books-grid div.book-card span.span{
         width: auto;
         padding: 10px 16px;
         margin: 0;
+        white-space: nowrap;
     }
 
     /* Book latest resp */
@@ -1619,6 +1656,54 @@ section.related div.books-grid div.book-card span.span{
         padding: 15px;
         text-align: center;
     }
+
+
+         /* search page resp */
+        section.search{
+          padding: 40px 0px;
+         }
+        section.search header.head{
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        section.search header.head div.head-right{
+            width: 100%;
+            justify-content: center;
+            gap: 10px;
+        }
+        section.search main.books-grid{
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        section.search section.previous{
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        section.search section.previous button.Btn{
+            min-width: 32px;
+            height: 32px;
+            font-size: 13px;
+            padding: 0 6px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        section.search section.previous button.pre,
+        section.search section.previous button.next{
+            padding: 0 10px;
+        }
+        section.search section.previous span.dots{
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        
+
 
 }
 @media (min-width: 481px) and (max-width: 767px) {
@@ -1684,7 +1769,21 @@ section.related div.books-grid div.book-card span.span{
       footer.footer div.ftr div.ft-rigth{
         gap: 25px;
       }
-    
+      footer.footer div.ftr div.ft-rigth div.newsletter{
+        max-width: 100%;
+}
+       footer.footer div.ftr div.ft-rigth 
+       div.newsletter form.newsletter-form{
+          display: flex;
+          width: 100%;
+          gap: 8px;
+       }
+
+
+
+
+
+
       /* Registration resp */
       main.main-box{
         padding-top: 40px;
@@ -1696,6 +1795,42 @@ section.related div.books-grid div.book-card span.span{
         text-align: center;
     }
 
+     /* search page resp */
+        section.search{
+          padding: 50px 0px;
+         }
+        section.search header.head{
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        section.search header.head div.head-right{
+            width: 100%;
+            justify-content: center;
+            gap: 10px;
+        }
+        section.search header.head div.head-left h2{
+            font-size: 18px;
+        }
+        section.search header.head div.head-left p{
+            font-size: 11px;
+        }
+        section.search header.head div.head-right span,
+        section.search header.head div.head-right select.dropdown{
+            font-size: 12px;
+        }
+         section.search main.books-grid{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        section.search section.previous button.Btn{
+            margin-bottom: 30px;
+        }
+        section.search section.previous span.dots{
+            margin-bottom: 25px;
+        }
+
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -1703,7 +1838,7 @@ section.related div.books-grid div.book-card span.span{
         max-width: 960px;
     }
     /* nav resp */
-    div.bar-icon{
+    div.navbar nav div.right-side div.bar-icon{
         display: none;
     }
 
@@ -1734,6 +1869,22 @@ section.related div.books-grid div.book-card span.span{
         gap: 20px;
      }
 
+      /* footer resp */
+      footer.footer{
+        padding: 50px 0 30px 0;
+      } 
+      footer.footer div.ftr{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 35px;
+      } 
+      footer.footer div.ftr div.ft-rigth{
+        gap: 25px;
+        width: 100%;
+        gap: 20px;
+      }
+
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -1741,7 +1892,7 @@ section.related div.books-grid div.book-card span.span{
         max-width: 1100px;
     }
      /* nav resp */
-    div.bar-icon{
+     div.navbar nav div.right-side div.bar-icon{
         display: none;
     }
 
@@ -1753,6 +1904,22 @@ section.related div.books-grid div.book-card span.span{
         white-space: nowrap;
     }
 
+    /* footer resp */
+      footer.footer{
+        padding: 50px 0 30px 0;
+      } 
+      footer.footer div.ftr{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+      } 
+      footer.footer div.ftr div.ft-rigth{
+        gap: 25px;
+        width: 100%;
+        gap: 25px;
+      }
+
 }
 @media (min-width: 1200px){
    .container{
@@ -1760,7 +1927,7 @@ section.related div.books-grid div.book-card span.span{
     }
 
        /* Nav Responsive */
-     div.bar-icon{
+    div.navbar nav div.right-side div.bar-icon{
         display: none;
     }
     
