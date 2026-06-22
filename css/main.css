@@ -1299,6 +1299,12 @@ section.search section.previous span.dots{
 
      
 
+
+
+
+
+
+
     /* Book Detail style */
 section.book-container{
     display: flex;
@@ -1445,6 +1451,8 @@ section.book-container div.book-details
 div.book-actions a i.fa-regular{
     color: var(--primary-color);
 }
+
+   /* About section */
 div.About{
     background-color: var(--background-color-secondary);
     padding: 40px;
@@ -1702,6 +1710,61 @@ section.related div.books-grid div.book-card span.span{
             margin-bottom: 15px;
         }
 
+        /* Book detail */
+        section.book-container{
+            flex-direction: column;
+            padding: 40px 15px;
+            gap: 20px;
+        }
+        section.book-container div.book-cover{
+            max-width: 100%;
+        }
+        section.book-container div.book-cover img{
+            padding: 15px;
+            max-width: 220px;
+        }
+        section.book-container div.book-details nav.library{
+            margin-top: 30px;
+            text-align: center;
+        }
+        section.book-container div.book-details h1.title{
+            font-size: 28px;
+            text-align: center;
+        }
+        section.book-container div.book-details h3.author{
+             font-size: 17px;
+             text-align: center;
+        }
+        section.book-container div.book-details{
+            width: 100%;
+        }
+        section.book-container div.book-details div.book-actions{
+            grid-template-columns: 1fr;
+        }
+        div.About h2{
+            font-size: 22px;
+        }
+        div.About p{
+            font-size: 13px;
+        }
+        section.related div.header{
+            padding: 15px 5px;
+        }
+        section.related div.header h2{
+            font-size: 20px;
+        }
+        section.related div.header a{
+            font-size: 12px;
+        }
+        section.related div.books-grid{
+            grid-template-columns: 1fr;
+            gap: 25px;
+            padding: 0 10px;
+        }
+        section.related div.books-grid div.book-card span.span{
+            margin-bottom: 25px;
+        }
+
         
 
 
@@ -1831,6 +1894,32 @@ section.related div.books-grid div.book-card span.span{
             margin-bottom: 25px;
         }
 
+
+         /* Book detail */
+        section.book-container{
+            flex-direction: column;
+            padding: 50px 25px;
+            gap: 30px;
+        }
+        section.book-container div.book-cover{
+            max-width: 100%;
+        }
+        section.book-container div.book-cover img{
+            margin-bottom: 20px;
+            max-width: 250px;
+        }
+        section.related div.header{
+            padding: 20px 10px;
+        }
+        section.related div.books-grid{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 0 10px;
+        }
+        section.related div.books-grid div.book-card span.span{
+            margin-bottom: 30px;
+        }
+
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -1884,6 +1973,11 @@ section.related div.books-grid div.book-card span.span{
         width: 100%;
         gap: 20px;
       }
+
+      /* Book detail */
+      section.related div.books-grid{
+            grid-template-columns: repeat(3, 1fr);
+        }
 
 }
 
