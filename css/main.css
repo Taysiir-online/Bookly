@@ -24,6 +24,7 @@
     --border-color-secondary: #f5d1b9; 
 
     --box-shadow: #0000001A;
+    --Red: red;
 }
 
 @font-face {
@@ -149,7 +150,18 @@ div.navbar nav div.right-side div.profile {
     border: 5px solid var(--border-color-secondary);
     margin: 0px 10px;
 }
-
+div.navbar nav div.right-side div.logout button{
+    display: block;
+    padding: 8px 12px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--surface-white);
+    font-size: 12px;
+    font-family: P2;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 10px;
+}
 div.navbar nav div.right-side div.profile i {
     color: var(--border-color);
     font-size: 18px;
@@ -381,6 +393,12 @@ section.Books div.latest div.grid div.book-card {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 6px -1px var(--box-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+section.Books div.latest div.grid div.book-card:hover{
+     transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px var(--box-shadow);
 }
 section.Books div.latest div.grid div.book-card div.cover-box {
     height: 280px;
@@ -776,10 +794,6 @@ div.box div.field input{
     background-color: var(--background-color-secondary);
     color: var(--text-color);
 }
-div.box div.field input:focus{
-    border-color: var(--primary-color);
-    background-color: var(--background-color);
-}
 button.btn{
     width: 100%;
     padding: 12px;
@@ -964,13 +978,24 @@ div.box div.field input{
     background-color: var(--background-color-secondary);
     color: var(--text-color);
 }
+
+   /* class Error */
+div.box div.field input.Error{
+    border: solid 0.5px var(--Red);
+}
+div.box div.field p{
+    color: var(--Red);
+    font-size: 15px;
+    visibility: hidden;
+    margin-top: 10px;
+}
+div.box div.field p.active{
+    visibility: visible;
+}
+
 div.box div.field input::placeholder{
     font-family: P2;
     font-size: 12px;
-}
-div.box div.field input:focus{
-    border-color: var(--primary-color);
-    background-color: var(--background-color);
 }
 button.btn{
     width: 100%;
@@ -987,6 +1012,12 @@ button.btn{
     margin-top: 20px;
     cursor: pointer;
 }
+
+ /* sweet alert */
+ button.confirm {
+    background-color: var(--primary-color) !important;
+  }
+  
 div.line{
     position: relative;
     display: flex;
@@ -1325,7 +1356,13 @@ section.book-container div.book-cover{
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 6px -1px var(--box-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     
+}
+section.book-container div.book-cover:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px var(--box-shadow);
 }
 section.book-container div.book-cover img{
     width: 100%;
@@ -1412,7 +1449,16 @@ div.book-subject div.sub-tags span{
     border-radius: 8px;
     font-size: 12px;
     font-family: P2;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px -1px var(--box-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+section.book-container div.book-details 
+div.book-subject div.sub-tags span:hover{
+     transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px var(--box-shadow);
+}
+
 section.book-container div.book-details div.book-actions{
     display: grid;
     grid-template-columns: 1fr 1fr;
