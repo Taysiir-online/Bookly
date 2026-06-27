@@ -987,6 +987,7 @@ div.box div.field p{
     color: var(--Red);
     font-size: 15px;
     visibility: hidden;
+    margin-top: 10px;
 }
 div.box div.field p.active{
     visibility: visible;

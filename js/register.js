@@ -11,7 +11,7 @@ Password.addEventListener("input", () => {
    let length = Password.value.length;
 
   if (length < 8) {
-    P.textContent = "at least 8 characters";
+    P.textContent = " Requires at least 8 characters";
     P.classList.add("active");
     Password.classList.add("Error");
   } else if (length >= 8){
@@ -25,7 +25,7 @@ Password.addEventListener("input", () => {
 //    confirm check
 Confirm.addEventListener("input", () => {
   if ( Confirm.value !== Password.value) {
-    P.textContent = "Use same password";
+    P.textContent = "Password do not match";
     P.classList.add("active");
     Confirm.classList.add("Error");
   } else if (Confirm.value === Password.value){
