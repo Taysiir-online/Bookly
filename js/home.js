@@ -14,8 +14,7 @@ const getbooks = async () => {
     data.results.forEach((book) => {
       const card = document.createElement("div");
       card.classList.add("book-card");
-      card.innerHTML = `
-                <div class="cover-box bg-color1">
+      card.innerHTML = ` <div class="cover-box bg-color1">
                     <span class="lang">${book.languages}</span>
                     <div class="cover-details">
                         <img src="${book.formats["image/jpeg"]}" alt="The Great Gatsby Cover" class="book-image">
