@@ -3,16 +3,18 @@ import { logout } from "./main.js";
 const log_out = document.querySelector("div.logout > button");
 logout(log_out);
 
-// Api
-const api = "https://gutendex.com/books";
+
 const container = document.querySelector("section.book-container");
 const About = document.querySelector("div.About");
+const id = window.location.search.split("=")[1];
+// Api
+const api = `https://gutendex.com/books/${id}/`;
 const getDetail = async () => {
   try {
     const response = await fetch(api);
-    const data = await response.json();
-    console.log(data.results);
-    const detail = data.results[0];
+    const data = await response.json();  
+    const detail = data;
+    console.log(detail);
     container.innerHTML = `<div class="book-cover">
         <img src="${detail.formats["image/jpeg"]}" alt="img-book" />
       </div>
@@ -33,21 +35,22 @@ const getDetail = async () => {
         <div class="book-subject">
           <span class="sub-title">SUBJECTS</span>
           <div class="sub-tags">
-            <span>${detail.subjects}</span>
-          </div>
+             ${detail.subjects.map((subject) => `<span>${subject}</span>`).join("")}
+            </div>
         </div>
 
         <div class="book-actions">
-          <a href="login.html" class="btn primary">
+          <a href="${detail.formats["text/html"]}" class="btn primary">
             <i class="fa-solid fa-book-open"></i> Read Online</a
           >
-          <a href="login.html" class="btn secondary">
+          <a href="${detail.formats["application/pdf" || "#"]}" class="btn secondary"
+          style="display: ${detail.formats["application/pdf"] ? "flex" : "none"};">
             <i class="fa-regular fa-file-pdf"></i> Download PDF</a
           >
-          <a href="login.html" class="btn secondary">
+            <a href="${detail.formats["application/epub+zip"]}" class="btn secondary">
             <i class="fa-regular fa-file"></i> Download EPUB</a
           >
-          <a href="login.html" class="btn secondary">
+          <a href="${detail.formats["text/plain; charset=utf-8"]}" class="btn secondary">
             <i class="fa-regular fa-file-lines"></i> Download TXT</a
           >
         </div>
@@ -62,5 +65,9 @@ const getDetail = async () => {
   } catch (error) {
     console.log(error);
   }
+  
 };
+
 getDetail();
+
+
