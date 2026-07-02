@@ -14,8 +14,7 @@ const getbooks = async () => {
     data.results.forEach((book) => {
       const card = document.createElement("div");
       card.classList.add("book-card");
-      card.innerHTML = `
-                <div class="cover-box bg-color1">
+      card.innerHTML = ` <div class="cover-box bg-color1">
                     <span class="lang">${book.languages}</span>
                     <div class="cover-details">
                         <img src="${book.formats["image/jpeg"]}" alt="The Great Gatsby Cover" class="book-image">
@@ -26,7 +25,7 @@ const getbooks = async () => {
                     <p class="author">${book.authors.map((author) => author.name).join(" ")}</p>
                     <div class="card-footer">
                         <span><i class="fa-solid fa-download"></i> ${book.download_count}</span>
-                        <button><a href="search.html"> View Details</a></button>
+                        <button><a href="detail.html?id=${book.id}"> View Details</a></button>
                     </div>
                 </div>
             `;
@@ -37,3 +36,8 @@ const getbooks = async () => {
   }
 };
 getbooks();
+
+
+fetch("https://gutendex.com/books").then((response) => {
+console.log(response);
+});
