@@ -3,7 +3,11 @@ import { logout } from "./main.js";
 const log_out = document.querySelector("div.logout > button");
 logout(log_out);
 
-
+let loading = document.querySelector("div.loading");
+let load = true
+if (loading) {
+  loading.classList.add("active");
+}
 const container = document.querySelector("section.book-container");
 const About = document.querySelector("div.About");
 const id = window.location.search.split("=")[1];
@@ -12,9 +16,14 @@ const api = `https://gutendex.com/books/${id}/`;
 const getDetail = async () => {
   try {
     const response = await fetch(api);
-    const data = await response.json();  
-    const detail = data;
-    console.log(detail);
+    if(response.ok){
+      const data = await response.json();  
+      const detail = data;
+       console.log(detail);
+       load = false;
+       if (loading) {
+         loading.classList.remove("active");
+       }
     container.innerHTML = `<div class="book-cover">
         <img src="${detail.formats["image/jpeg"]}" alt="img-book" />
       </div>
@@ -62,12 +71,23 @@ const getDetail = async () => {
         ${detail.summaries}
       </p>
             `;
-  } catch (error) {
-    console.log(error);
+        }else{
+        load = false;
+        if (loading) {
+        loading.classList.remove("active");
+      }
+         
+         About.innerHTML = `<div style = "text-align: center; color: red; 
+         font-weight: bold; padding: 20px; ">Error 404  (No product)</div>`;
+        
+      }
+  } catch (Error) {
+    console.log(Error.message);
   }
   
 };
 
-getDetail();
-
+setTimeout(()=> {
+getDetail(); 
+}, 3000 );
 

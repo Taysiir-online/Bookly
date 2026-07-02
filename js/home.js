@@ -36,3 +36,8 @@ const getbooks = async () => {
   }
 };
 getbooks();
+
+
+fetch("https://gutendex.com/books").then((response) => {
+console.log(response);
+});
