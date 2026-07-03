@@ -3,14 +3,24 @@ import { logout } from "./main.js";
 const log_out = document.querySelector("div.logout > button");
 logout(log_out);
 
+let loading = document.querySelector("div.loading");
+let load = true
+if (loading) {
+  loading.classList.add("active");
+}
 // Api
 const api = "https://gutendex.com/books";
 const Grid = document.getElementById("Grid");
 const getbooks = async () => {
   try {
     const response = await fetch(api);
-    const data = await response.json();
-    console.log(data);
+    if(response.ok){
+      const data = await response.json();
+      console.log(data);
+      load = false;
+      if (loading) {
+        loading.classList.remove("active");
+      }
     data.results.forEach((book) => {
       const card = document.createElement("div");
       card.classList.add("book-card");
@@ -31,13 +41,21 @@ const getbooks = async () => {
             `;
       Grid.appendChild(card);
     });
+   }else{
+    load = false;
+    if (loading) {
+    loading.classList.remove("active");
+  }
+     
+     Grid.innerHTML = `<div style = " text-align: center; color: #7c3bed; 
+     font-weight: bold; ">Error 404  (No product)</div>`;
+    
+  }
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
-getbooks();
+setTimeout(()=> {
+  getbooks(); 
+  }, 2000 );
 
-
-fetch("https://gutendex.com/books").then((response) => {
-console.log(response);
-});
