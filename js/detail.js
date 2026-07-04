@@ -53,7 +53,7 @@ const getDetail = async () => {
             <i class="fa-solid fa-book-open"></i> Read Online</a
           >
           <a href="${detail.formats["application/pdf" || "#"]}" class="btn secondary"
-          style="display: ${detail.formats["application/pdf"] ? "flex" : "none"};">
+            style="display: ${detail.formats["application/pdf"] ? "flex" : "none"};">
             <i class="fa-regular fa-file-pdf"></i> Download PDF</a
           >
             <a href="${detail.formats["application/epub+zip"]}" class="btn secondary">
@@ -89,5 +89,5 @@ const getDetail = async () => {
 
 setTimeout(()=> {
 getDetail(); 
-}, 3000 );
+}, 2000 );
 
