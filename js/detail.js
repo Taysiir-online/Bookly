@@ -10,6 +10,7 @@ if (loading) {
 }
 const container = document.querySelector("section.book-container");
 const About = document.querySelector("div.About");
+const relatedBook = document.querySelector("div.books-grid");
 const id = window.location.search.split("=")[1];
 // Api
 const api = `https://gutendex.com/books/${id}/`;
@@ -19,11 +20,14 @@ const getDetail = async () => {
     if(response.ok){
       const data = await response.json();  
       const detail = data;
-       console.log(detail);
-       load = false;
-       if (loading) {
-         loading.classList.remove("active");
-       }
+       const sub = detail.subjects[0];
+            const relatedApi = await fetch(`https://gutendex.com/books/?topic=${sub}`);
+              const resp = await relatedApi.json();
+                const Results = resp.results.slice(0, 5);
+                  load = false;
+                   if (loading) {
+                  loading.classList.remove("active");
+                 }
     container.innerHTML = `<div class="book-cover">
         <img src="${detail.formats["image/jpeg"]}" alt="img-book" />
       </div>
@@ -71,6 +75,21 @@ const getDetail = async () => {
         ${detail.summaries}
       </p>
             `;
+            
+              relatedBook.innerHTML = Results.map((books) =>
+                `<div class="book-card">
+                   <div class="card-img">
+                    <img src="${books.formats["image/jpeg"]}" alt="Book" />
+                </div>
+                   <h4>${books.title.substring(0, 35)}</h4>
+                     <span>${books.authors.map((author) => author.name).join(" ,")}</span>
+                       <span class="span">${books.languages.join(" ,")}</span>
+                       <a href="detail.html?id=${books.id}" class="btn-view" style = "color: var(--primary-color);
+                           font-family: P2; font-size: 12px; font-weight: 600; text-decoration: none; display: inline-flex;
+                             align-items: center; gap: 8px;"> View Details</a>
+                        </div>
+                `
+              ).join("");
         }else{
         load = false;
         if (loading) {
@@ -79,6 +98,8 @@ const getDetail = async () => {
          
          About.innerHTML = `<div style = "text-align: center; color: red; 
          font-weight: bold; padding: 20px; ">Error 404  (No product)</div>`;
+         relatedBook.innerHTML = `<div style = "text-align: center; color: red; 
+         font-weight: bold; padding: 20px; ">No related books</div>`;
         
       }
   } catch (Error) {
