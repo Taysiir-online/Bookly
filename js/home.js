@@ -35,7 +35,7 @@ const getbooks = async () => {
                     <p class="author">${book.authors.map((author) => author.name).join(" ")}</p>
                     <div class="card-footer">
                         <span><i class="fa-solid fa-download"></i> ${book.download_count}</span>
-                        <button><a href="detail.html?id=${book.id}"> View Details</a></button>
+                        <button><a href="detail.html?id=${book.id}?topic=${book.subjects[0]}"> View Details</a></button>
                     </div>
                 </div>
             `;
