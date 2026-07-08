@@ -4,7 +4,7 @@ const log_out = document.querySelector("div.logout > button");
 logout(log_out);
 
 let loading = document.querySelector("div.loading");
-let load = true
+let load = true;
 if (loading) {
   loading.classList.add("active");
 }
@@ -16,14 +16,14 @@ const api = `https://gutendex.com/books/${id}/`;
 const getDetail = async () => {
   try {
     const response = await fetch(api);
-    if(response.ok){
-      const data = await response.json();  
+    if (response.ok) {
+      const data = await response.json();
       const detail = data;
-       load = false;
-         if (loading) {
-              loading.classList.remove("active");
-          }
-    container.innerHTML = `<div class="book-cover">
+      load = false;
+      if (loading) {
+        loading.classList.remove("active");
+      }
+      container.innerHTML = `<div class="book-cover">
         <img src="${detail.formats["image/jpeg"]}" alt="img-book" />
       </div>
       <div class="book-details">
@@ -65,77 +65,79 @@ const getDetail = async () => {
       </div>
             `;
 
-    About.innerHTML = `<h2>${detail.title}</h2>
+      About.innerHTML = `<h2>${detail.title}</h2>
       <p>
         ${detail.summaries}
       </p>
             `;
-        }else{
-        load = false;
-        if (loading) {
+    } else {
+      load = false;
+      if (loading) {
         loading.classList.remove("active");
       }
-         
-         About.innerHTML = `<div style = "text-align: center; color: red; 
+
+      About.innerHTML = `<div style = "text-align: center; color: red; 
          font-weight: bold; padding: 20px; ">Error 404  (No product)</div>`;
-        
-      }
+    }
   } catch (Error) {
     console.log(Error.message);
   }
-  
 };
 
-setTimeout(()=> {
-getDetail(); 
-}, 2000 );
+setTimeout(() => {
+  getDetail();
+}, 2000);
 
+// Related book Function
+const relatedId = window.location.search.split("=")[2];
+console.log(relatedId);
 
-
-  // Related book Function
-  const RelatedBooks = document.querySelector("div.books-grid");
-  const relatedId = window.location.search.split("=")[2];
-  console.log(relatedId);
-
-  // Api
-const Api = `https://gutendex.com/books/${id}/${relatedId}`;
+// Api
+const Api = `https://gutendex.com/books/?topic=${relatedId}`;
+const RelatedBooks = document.querySelector("div.books-grid");
 const getRelated = async () => {
   try {
     const response = await fetch(Api);
-    if(response.ok){
-      const data = await response.json();  
+    if (response.ok) {
+      const data = await response.json();
       console.log(data);
-      const classics = data;
-       load = false;
-         if (loading) {
-              loading.classList.remove("active");
-          }
-          RelatedBooks.innerHTML = `
-          <div class="book-card">
-          <div class="card-img">
-            <img src="${classics.formats["image/jpeg"]}" alt="Book" />
-          </div>
-          <h4>${classics.title}</h4>
-          <span>${classics.authors.map((author) => author.name).join(" ")}</span>
-          <span class="span">${classics.languages}</span>
-        </div>
-            `;
-        }else{
-        load = false;
-        if (loading) {
+      const Results = data.results.slice(0, 5);
+      load = false;
+      if (loading) {
         loading.classList.remove("active");
       }
-         
-         RelatedBooks.innerHTML = `<div style = "text-align: center; color: red; 
-         font-weight: bold; padding: 20px; ">Error 404  (No product)</div>`;
-        
+      Results.forEach((classics) => {
+        const cards = document.createElement("div");
+        cards.classList.add("book-card");
+        cards.innerHTML = `<div class="card-img">
+            <img src="${classics.formats["image/jpeg"]}" alt="Book" />
+          </div>
+          <h4>${classics.title.substr(0, 30)}...</h4>
+          <span>${classics.authors.map((author) => author.name).join(" ")}</span>
+          <span class="span">${classics.languages}</span>
+           <a href="detail.html?id=${classics.id}?topic=${classics.subjects[0]}" 
+           style="text-decoration: none; 
+           background-color: var(--primary-color); padding: 12px; 
+           width: 100%; color: var(--surface-white); 
+           border: none; border-radius: 8px; font-size: 14px; 
+           font-weight: 500; cursor: pointer; display: flex; 
+           justify-content: center; align-items: center;" > View Details</a>
+             `;
+        RelatedBooks.appendChild(cards);
+      });
+    } else {
+      load = false;
+      if (loading) {
+        loading.classList.remove("active");
       }
-  } catch (Error) {
-    console.log(Error.message);
-  }
-  
-};
 
-setTimeout(()=> {
-getRelated(); 
-}, 2000 );
+      RelatedBooks.innerHTML = `<div style = " text-align: center; color: #7c3bed; 
+     font-weight: bold; ">Error 404  (No product)</div>`;
+    }
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+setTimeout(() => {
+  getRelated();
+}, 2000);
