@@ -10,7 +10,12 @@ if (loading) {
 }
 const container = document.querySelector("section.book-container");
 const About = document.querySelector("div.About");
-const id = window.location.search.split("=")[1];
+const prams = new URLSearchParams(window.location.search);
+const id = prams.get("id");
+console.log(id);
+// Related book Function
+const relatedTopic = prams.get("topic");
+console.log(relatedTopic);
 // Api
 const api = `https://gutendex.com/books/${id}/`;
 const getDetail = async () => {
@@ -84,16 +89,10 @@ const getDetail = async () => {
   }
 };
 
-setTimeout(() => {
-  getDetail();
-}, 2000);
-
-// Related book Function
-const relatedId = window.location.search.split("=")[2];
-console.log(relatedId);
+getDetail();
 
 // Api
-const Api = `https://gutendex.com/books/?topic=${relatedId}`;
+const Api = `https://gutendex.com/books/?topic=${relatedTopic}`;
 const RelatedBooks = document.querySelector("div.books-grid");
 const getRelated = async () => {
   try {
@@ -138,6 +137,4 @@ const getRelated = async () => {
     console.log(error.message);
   }
 };
-setTimeout(() => {
-  getRelated();
-}, 2000);
+getRelated();
