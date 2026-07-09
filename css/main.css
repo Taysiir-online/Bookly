@@ -1329,6 +1329,8 @@ section.book-container {
   padding: 70px 20px;
   border-radius: 12px;
   align-items: center;
+  position: relative;
+  min-height: 100px;
 }
 section.book-container div.book-cover {
   flex: 1;
@@ -1531,6 +1533,8 @@ section.related div.books-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 15px;
+  position: relative;
+  min-height: 100px;
 }
 section.related div.books-grid div.book-card {
   display: flex;
@@ -1589,7 +1593,7 @@ div.loading {
   z-index: 9999;
   display: none;
 }
-div.loading p{
+div.loading p {
   font-size: 12px;
   font-family: P1;
   color: var(--text-color-secondary);
@@ -1617,59 +1621,59 @@ div.loader {
     transform: rotate(360deg);
   }
 }
-   /* About page style*/
-   div.Clients{
-    width: 100%;
-    height: 100%;
-    background-color: var(--background-color);
-    padding: 5% 0px;
+/* About page style*/
+div.Clients {
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color);
+  padding: 5% 0px;
 }
-div.Clients div.Client{
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, auto);
+div.Clients div.Client {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, auto);
 }
-div.Clients div.Client div.Title_and_desc span{
-    display: block;
-    width: 105px;
-    height: 30px;
-    border-radius: 15px;
-    background-color: var(--background-color-secondary);
-    color: var(--text-muted);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: P1;
-    font-weight: 500;
-    font-size: 12px;
-    padding: 1px;
+div.Clients div.Client div.Title_and_desc span {
+  display: block;
+  width: 105px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: var(--background-color-secondary);
+  color: var(--text-muted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: P1;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 1px;
 }
-div.Clients div.Client div.Title_and_desc h2{
-    font-size: 50px;
-    color: var(--text-color);
-    font-family: P2;
-    padding: 15px 0px;
+div.Clients div.Client div.Title_and_desc h2 {
+  font-size: 50px;
+  color: var(--text-color);
+  font-family: P2;
+  padding: 15px 0px;
 }
-div.Clients div.Client div.Title_and_desc p{
-    font-size: 14px;
-    color: var(--text-muted);
-    font-family: P2;
-    text-align: start;
+div.Clients div.Client div.Title_and_desc p {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-family: P2;
+  text-align: start;
 }
-div.Clients div.Client div.Title_and_desc p > i{
+div.Clients div.Client div.Title_and_desc p > i {
   font-size: 15px;
   font-weight: 500;
   color: var(--primary-color);
 }
-div.Clients div.Client div.form{
+div.Clients div.Client div.form {
   background-color: var(--background-color);
   padding: 20px;
   border-radius: 6px;
   box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.2);
 }
-div.Clients div.Client div.form form{
+div.Clients div.Client div.form form {
   width: 100%;
   height: 100%;
   display: flex;
@@ -1677,19 +1681,19 @@ div.Clients div.Client div.form form{
   align-items: center;
   flex-flow: wrap column;
 }
-div.Clients div.Client div.form form h2{
+div.Clients div.Client div.form form h2 {
   font-size: 18px;
   color: var(--text-color-secondary);
   margin-bottom: 10px;
 }
-div.Clients div.Client div.form form label{
+div.Clients div.Client div.form form label {
   width: 90%;
   font-size: 16px;
   color: var(--text-color);
   font-family: P2;
   margin: 15px 0px;
 }
-div.Clients div.Client div.form form input{
+div.Clients div.Client div.form form input {
   width: 90%;
   height: 45px;
   background-color: var(--surface-white);
@@ -1702,8 +1706,8 @@ div.Clients div.Client div.form form input{
   color: var(--text-placeholder);
   font-family: P2;
 }
-div.Clients div.Client div.form form textarea{
-   width: 90%;
+div.Clients div.Client div.form form textarea {
+  width: 90%;
   height: 170px;
   background-color: var(--surface-white);
   border: none;
@@ -1717,8 +1721,8 @@ div.Clients div.Client div.form form textarea{
   font-family: P2;
   resize: none;
 }
-div.Clients div.Client div.form form button{
-   width: 90%;
+div.Clients div.Client div.form form button {
+  width: 90%;
   height: 50px;
   border: none;
   outline: none;
@@ -1731,21 +1735,6 @@ div.Clients div.Client div.form form button{
   cursor: pointer;
   margin: 15px 0px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Responsive Design: */
 @media (max-width: 480px) {
