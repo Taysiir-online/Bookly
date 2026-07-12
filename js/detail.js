@@ -12,10 +12,8 @@ const container = document.querySelector("section.book-container");
 const About = document.querySelector("div.About");
 const prams = new URLSearchParams(window.location.search);
 const id = prams.get("id");
-console.log(id);
 // Related book Function
 const relatedTopic = prams.get("topic");
-console.log(relatedTopic);
 // Api
 const api = `https://gutendex.com/books/${id}/`;
 const getDetail = async () => {
@@ -24,6 +22,7 @@ const getDetail = async () => {
     if (response.ok) {
       const data = await response.json();
       const detail = data;
+      console.log(detail);
       load = false;
       if (loading) {
         loading.classList.remove("active");
@@ -43,6 +42,7 @@ const getDetail = async () => {
           <span class="meta"
             ><i class="fa-solid fa-download"></i> ${detail.download_count}</span
           >
+            <span class="meta" id="fav-btn"><i class="fa-solid fa-heart"></i>favorite</span>
         </div>
 
         <div class="book-subject">
@@ -69,6 +69,10 @@ const getDetail = async () => {
         </div>
       </div>
             `;
+      const favBtn = document.getElementById("fav-btn");
+      favBtn.addEventListener("click", () => {
+        addToFavorites(detail);
+      });
 
       About.innerHTML = `<h2>${detail.title}</h2>
       <p>
@@ -99,7 +103,6 @@ const getRelated = async () => {
     const response = await fetch(Api);
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
       const Results = data.results.slice(0, 5);
       load = false;
       if (loading) {
@@ -138,3 +141,24 @@ const getRelated = async () => {
   }
 };
 getRelated();
+
+const addToFavorites = (FavBook) => {
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  const isExist = favorites.some((fav) => fav.id === FavBook.id);
+  if (isExist) {
+    swal("This book is already in your favorites.");
+  } else {
+    const favoriteBook = {
+      id: FavBook.id,
+      title: FavBook.title,
+      author: FavBook.authors.map((author) => author.name).join(" "),
+      image: FavBook.formats["image/jpeg"],
+      language: FavBook.languages,
+      download: FavBook.download_count,
+      topic: FavBook.subjects[0],
+    };
+    favorites.push(favoriteBook);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    swal("Book added to your Library!");
+  }
+};

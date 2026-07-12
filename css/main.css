@@ -1399,11 +1399,15 @@ section.book-container div.book-details div.book-meta span.meta {
   font-size: 13px;
   font-family: P2;
   font-weight: 500;
+  cursor: pointer;
 }
 section.book-container div.book-details div.book-meta span.meta i {
   font-size: 12px;
   color: var(--primary-color);
   padding: 0px 5px;
+}
+section.book-container div.book-details div.book-meta span.meta i.fa-heart {
+  color: var(--Red);
 }
 section.book-container div.book-details div.book-subject {
   margin-bottom: 25px;
@@ -1734,6 +1738,22 @@ div.Clients div.Client div.form form button {
   font-family: P2;
   cursor: pointer;
   margin: 15px 0px;
+}
+
+/* Remove buttom in Library section */
+.remove-btn {
+  background-color: var(--primary-color);
+  color: var(--surface-white);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: P2;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  gap: 6px;
 }
 
 /* Responsive Design: */
