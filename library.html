@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <title>My Library</title>
+  </head>
+  <body>
+    <!-- Navbar section -->
+    <div class="navbar">
+      <div class="container">
+        <nav>
+          <div class="logo">
+            <img
+              src="/assets/images/601511463-a85ab1da-9c64-4ead-a9a9-eb94a7093d4c.png"
+              alt="logo"
+            />
+          </div>
+          <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html" class="B">Browse</a></li>
+            <li><a href="library.html">My Library</a></li>
+            <li><a href="About.html">About</a></li>
+          </ul>
+
+          <div class="right-side">
+            <div class="searchinput">
+              <i class="fa-brands fa-sistrix"></i>
+              <input type="search" placeholder="Quick search...." />
+            </div>
+            <div class="profile">
+              <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="logout">
+              <button type="submit">
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </button>
+            </div>
+            <!-- bar-icon -->
+            <div id="bar-icon" class="bar-icon">
+              <div class="MobileIcon">
+                <i class="fa-solid fa-bars"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div id="MobileNav" class="MobileNav">
+                    <div class="m-Nav">
+                         <ul class="links Mobile_link">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                     <li>
+                        <a href="#" class="B">Browse</a>
+                    </li>
+                     <li>
+                        <a href="#">My Library</a>
+                    </li>
+                     <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+                    </div>
+                </div> -->
+        </nav>
+      </div>
+    </div>
+
+    <!-- Books section -->
+    <section class="Books">
+      <div class="container">
+        <div class="latest">
+          <!-- cards -->
+          <div class="grid" id="Grid"></div>
+        </div>
+      </div>
+    </section>
+    <script src="/js/library.js" type="module"></script>
+  </body>
+</html>
