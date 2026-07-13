@@ -1,7 +1,15 @@
 // imports
-import { logout } from "./main.js";
+import { islogin, logout, handleSearch } from "/js/main.js";
 const log_out = document.querySelector("div.logout > button");
 logout(log_out);
+// get search input
+const searchInput = document.querySelector('input[type="search"]');
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    handleSearch(searchInput);
+  }
+});
 
 let loading = document.querySelector("div.loading");
 let load = true;
@@ -34,7 +42,7 @@ const getDetail = async () => {
         <nav class="library">
           Library <i class="fa-solid fa-chevron-right"></i> fiction
         </nav>
-        <h1 class="title">${detail.title}</h1>
+        <h1 class="title">${detail.title.substring(0, 50)}...</h1>
         <h3 class="author">${detail.authors.map((author) => author.name).join(" ")}</h3>
 
         <div class="book-meta">
