@@ -1,7 +1,15 @@
 // imports
-import { logout } from "./main.js";
+import { islogin, logout, handleSearch } from "/js/main.js";
 const log_out = document.querySelector("div.logout > button");
 logout(log_out);
+// get search input
+const searchInput = document.querySelector('input[type="search"]');
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    handleSearch(searchInput);
+  }
+});
 
 let loading = document.querySelector("div.loading");
 let load = true;
@@ -56,3 +64,21 @@ const getbooks = async () => {
 };
 
 getbooks();
+
+// // get search input
+// const searchInput = document.querySelector('input[type="search"]');
+
+// function handleSearch() {
+//   const searchValue = searchInput.value.trim();
+//   if (searchValue.length == 0) {
+//     alert("please enter a search term.");
+//     return;
+//   }
+//   window.location.href = `search.html?q=${searchValue}`;
+// }
+// searchInput.addEventListener("keydown", (e) => {
+//   if (e.key === "Enter") {
+//     e.preventDefault();
+//     handleSearch();
+//   }
+// });

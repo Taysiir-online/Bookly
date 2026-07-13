@@ -1145,6 +1145,8 @@ section.search main.books-grid {
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 25px;
   margin-bottom: 40px;
+  position: relative;
+  min-height: 300px;
 }
 section.search main.books-grid div.book-card {
   background: var(--background-color);
@@ -1259,6 +1261,10 @@ section.search main.books-grid div.book-card div.book-info button.view-btn {
   align-items: center;
   gap: 8px;
   transition: background-color 0.2s;
+}
+section.search main.books-grid div.book-card div.book-info button.view-btn a {
+  text-decoration: none;
+  color: var(--surface-white);
 }
 section.search
   main.books-grid

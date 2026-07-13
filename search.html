@@ -9,6 +9,11 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css"
+      />
     </head>
     <title>Search page</title>
   </head>
@@ -76,7 +81,11 @@
 
         <!-- Book-grid -->
         <main class="books-grid">
-          <div class="book-card">
+          <div class="loading">
+            <div class="loader"></div>
+            <p>please wait</p>
+          </div>
+          <!-- <div class="book-card">
             <div class="book-img">
               <img
                 src="/assets/images/Book1.jpg"
@@ -268,7 +277,7 @@
                 <i class="fa-regular fa-eye"></i> View Details
               </button>
             </div>
-          </div>
+          </div> -->
         </main>
 
         <section class="previous">
@@ -347,7 +356,7 @@
           </div>
         </div>
         <div class="ft-bottom">
-          <p class="copy">&copy; 2024 GutenLib. All rigths reserved.</p>
+          <p class="copy">&copy; 2024 GutenLib. All rights reserved.</p>
           <div class="links">
             <a href="#">Privacy Policy</a>
             <a href="#">Cookies</a>
@@ -356,5 +365,7 @@
         </div>
       </div>
     </footer>
+    <script src="/js/search.js" type="module"></script>
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
   </body>
 </html>

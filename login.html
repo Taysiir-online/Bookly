@@ -1,74 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login form</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
-    <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
     <!-- header -->
     <header class="logo-container">
-        <div class="container">
-            <div class="logo">
-                <img src="/assets/images/601511463-a85ab1da-9c64-4ead-a9a9-eb94a7093d4c.png" alt="logo">
-                <span>Bookly</span>
-            </div>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="/assets/images/601511463-a85ab1da-9c64-4ead-a9a9-eb94a7093d4c.png"
+            alt="logo"
+          />
+          <span>Bookly</span>
         </div>
+      </div>
     </header>
-   
+
     <!-- form -->
-     <main class="main-box">
-            <div class="card">
-                <h2>Welcome Back!</h2>
-                <p class="card-text">
-                    Please enter your details to sign in.
-                </p>
+    <main class="main-box">
+      <div class="card">
+        <h2>Welcome Back!</h2>
+        <p class="card-text">Please enter your details to sign in.</p>
 
-                <form action="#">
-                    <div class="box">
-                        <label>Email</label>
-                        <div class="field">
-                          <i class="fa-regular fa-envelope"></i>
-                            <input type="email" name="email"
-                            placeholder="Enter your email">
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="row">
-                        <label>Password</label>
-                        <a href="#" class="link-pass">Forgot password?</a>
-                        </div>
-                        <div class="field">
-                        <i class="fa-solid fa-lock"></i>
-                            <input type="password" name="password"
-                            placeholder="Enter your password" required>
-                           </div>
-                        </div>
-                        <button type="submit" class="btn">
-                            Login  <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        </button>
-                </form>
-
-                <div class="line">
-                    <span>Or continue with</span>
-                </div>,
-                <p class="reg-text">Don't have an account? <a href="register.html">Register</a></p>
+        <form action="#">
+          <div class="box">
+            <label>Email</label>
+            <div class="field">
+              <i class="fa-regular fa-envelope"></i>
+              <input type="email" name="email" placeholder="Enter your email" />
             </div>
-     </main>
-      
-     <!-- footer -->
-     <footer class="foot">
-        <div class="links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Support</a>
+          </div>
+          <div class="box">
+            <div class="row">
+              <label>Password</label>
+              <a href="#" class="link-pass">Forgot password?</a>
+            </div>
+            <div class="field">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+          </div>
+          <button type="submit" class="btn">
+            Login <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          </button>
+        </form>
+
+        <div class="line">
+          <span>Or continue with</span>
         </div>
-        <p class="copy">&copy; 2024 GutenLib Digital Library. All rights reserved.</p>
-     </footer>
-     <script src="js/login.js" type="module"></script>
-     <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
-</body>
+        ,
+        <p class="reg-text">
+          Don't have an account? <a href="register.html">Register</a>
+        </p>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="foot">
+      <div class="links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Support</a>
+      </div>
+      <p class="copy">
+        &copy; 2024 GutenLib Digital Library. All rights reserved.
+      </p>
+    </footer>
+    <script src="js/login.js" type="module"></script>
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+  </body>
 </html>
