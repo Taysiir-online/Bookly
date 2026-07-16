@@ -11,6 +11,11 @@ searchInput.addEventListener("keydown", (e) => {
   }
 });
 
+// protect the page from unauthorized access
+if (islogin().login === false) {
+  window.location.href = "/login.html";
+}
+
 let loading = document.querySelector("div.loading");
 let load = true;
 if (loading) {
@@ -150,7 +155,12 @@ const getRelated = async () => {
 };
 getRelated();
 
+//  favorite function
 const addToFavorites = (FavBook) => {
+  // protect the page from unauthorized access
+  if (islogin().login === false) {
+    window.location.href = "/login.html";
+  }
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
   const isExist = favorites.some((fav) => fav.id === FavBook.id);
   if (isExist) {

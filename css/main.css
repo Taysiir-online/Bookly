@@ -148,6 +148,10 @@ div.navbar nav div.right-side div.profile {
   border: 5px solid var(--border-color-secondary);
   margin: 0px 10px;
 }
+div.navbar nav div.right-side div.profile i {
+  color: var(--border-color);
+  font-size: 18px;
+}
 div.navbar nav div.right-side div.logout button {
   display: block;
   padding: 8px 12px;
@@ -159,10 +163,6 @@ div.navbar nav div.right-side div.logout button {
   border-radius: 8px;
   cursor: pointer;
   margin: 0 10px;
-}
-div.navbar nav div.right-side div.profile i {
-  color: var(--border-color);
-  font-size: 18px;
 }
 
 /* Bar Icon */
