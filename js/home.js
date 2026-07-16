@@ -64,21 +64,3 @@ const getbooks = async () => {
 };
 
 getbooks();
-
-// // get search input
-// const searchInput = document.querySelector('input[type="search"]');
-
-// function handleSearch() {
-//   const searchValue = searchInput.value.trim();
-//   if (searchValue.length == 0) {
-//     alert("please enter a search term.");
-//     return;
-//   }
-//   window.location.href = `search.html?q=${searchValue}`;
-// }
-// searchInput.addEventListener("keydown", (e) => {
-//   if (e.key === "Enter") {
-//     e.preventDefault();
-//     handleSearch();
-//   }
-// });
