@@ -158,10 +158,13 @@ getRelated();
 //  favorite function
 const addToFavorites = (FavBook) => {
   // protect the page from unauthorized access
-  if (islogin().login === false) {
+  const LoginStatus = islogin();
+  if (LoginStatus.login === false) {
     window.location.href = "/login.html";
   }
-  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  const CurrentUser = LoginStatus.name;
+  const StorageKey = `favorites_${CurrentUser}`;
+  let favorites = JSON.parse(localStorage.getItem(StorageKey)) || [];
   const isExist = favorites.some((fav) => fav.id === FavBook.id);
   if (isExist) {
     swal("This book is already in your favorites.");
@@ -176,7 +179,7 @@ const addToFavorites = (FavBook) => {
       topic: FavBook.subjects[0],
     };
     favorites.push(favoriteBook);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+    localStorage.setItem(StorageKey, JSON.stringify(favorites));
     swal("Book added to your Library!");
   }
 };

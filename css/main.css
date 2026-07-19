@@ -1973,6 +1973,38 @@ div.Clients div.Client div.form form button {
   section.related div.books-grid div.book-card span.span {
     margin-bottom: 25px;
   }
+
+  /* About page resp */
+  div.Clients {
+    padding: 40px 15px;
+  }
+  div.Clients div.Client {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  div.Clients div.Client div.Title_and_desc {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  div.Clients div.Client div.Title_and_desc h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+  div.Clients div.Client div.Title_and_desc p {
+    font-size: 12px;
+    text-align: center;
+  }
+  div.Clients div.Client div.Title_and_desc p br {
+    display: none;
+  }
+  div.Clients div.Client div.form form label,
+  div.Clients div.Client div.form form input,
+  div.Clients div.Client div.form form textarea,
+  div.Clients div.Client div.form form button {
+    width: 100%;
+  }
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .container {
@@ -2113,6 +2145,32 @@ div.Clients div.Client div.form form button {
   section.related div.books-grid div.book-card span.span {
     margin-bottom: 30px;
   }
+
+  /* About page resp */
+  div.Clients {
+    padding: 60px 20px;
+  }
+  div.Clients div.Client {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  div.Clients div.Client div.Title_and_desc h2 {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+  div.Clients div.Client div.Title_and_desc p {
+    font-size: 14px;
+    text-align: center;
+  }
+  div.Clients div.Client div.Title_and_desc p br {
+    display: none;
+  }
+  div.Clients div.Client div.form form label,
+  div.Clients div.Client div.form form input,
+  div.Clients div.Client div.form form textarea,
+  div.Clients div.Client div.form form button {
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -2169,6 +2227,19 @@ div.Clients div.Client div.form form button {
   /* Book detail */
   section.related div.books-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* About page resp */
+  div.Clients div.Client {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+  div.Clients div.Client div.Title_and_desc h2 {
+    font-size: 34px;
+  }
+  div.Clients div.Client div.Title_and_desc p {
+    font-size: 13px;
   }
 }
 

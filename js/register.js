@@ -76,9 +76,9 @@ form.addEventListener("submit", function (e) {
     Users.push(CurrentUser);
     localStorage.setItem("User", JSON.stringify(CurrentUser));
     localStorage.setItem("Users", JSON.stringify(Users));
-
-    swal("Account created successfully, welcome to Bookly!");
-
+    setTimeout(() => {
+      swal("Account created successfully, welcome to Bookly!");
+    }, 1000);
     // redirect to Home page after 2 seconds
     window.location.href = "index.html";
   }, 2000);

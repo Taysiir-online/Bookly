@@ -4,6 +4,7 @@ const islogin = () => {
   if (User) {
     return {
       login: true,
+      name: User.fullName,
     };
   } else {
     return {
