@@ -11,9 +11,16 @@ searchInput.addEventListener("keydown", (e) => {
   }
 });
 
+const getStorageKey = () => {
+  const LoginStatus = islogin();
+  const CurrentUser = LoginStatus.name;
+  return `favorites_${CurrentUser}`;
+};
+
 const LibraryGrid = document.getElementById("Grid");
 const DisplayLibraryBooks = () => {
-  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  const StorageKey = getStorageKey();
+  let favorites = JSON.parse(localStorage.getItem(StorageKey)) || [];
   if (favorites.length === 0) {
     LibraryGrid.innerHTML = `<div style = "text-align: center; color: red; 
          font-weight: bold; padding: 20px; ">No books in your library</div>`;
@@ -48,9 +55,10 @@ const removeFromLibrary = () => {
   removeButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
       const bookId = parseInt(e.currentTarget.getAttribute("data-id"));
-      let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      const StorageKey = getStorageKey();
+      let favorites = JSON.parse(localStorage.getItem(StorageKey)) || [];
       favorites = favorites.filter((book) => book.id !== bookId);
-      localStorage.setItem("favorites", JSON.stringify(favorites));
+      localStorage.setItem(StorageKey, JSON.stringify(favorites));
       DisplayLibraryBooks();
     });
   });
