@@ -3,14 +3,15 @@ import { islogin, logout, handleSearch } from "/js/main.js";
 const log_out = document.querySelector("div.logout > button");
 logout(log_out);
 // get search input
-const searchInput = document.querySelector('input[type="search"]');
-searchInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    handleSearch(searchInput);
-  }
+const searchInput = document.querySelectorAll('input[type="search"]');
+searchInput.forEach((input) => {
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSearch(input);
+    }
+  });
 });
-
 let loading = document.querySelector("div.loading");
 let load = true;
 if (loading) {
