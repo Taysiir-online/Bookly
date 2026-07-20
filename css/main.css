@@ -298,6 +298,12 @@ section.Bookly_hero div.parts div.p.left div.btn_Hero button {
   font-family: P2;
   cursor: pointer;
 }
+section.Bookly_hero div.parts div.p.left div.btn_Hero button a {
+  text-decoration: none;
+  color: var(--surface-white);
+  font-family: P2;
+  font-size: 12px;
+}
 section.Bookly_hero div.parts div.p.right {
   height: auto;
   padding: 10px;
