@@ -13,15 +13,25 @@ const islogin = () => {
   }
 };
 
-// logout function
-const logout = (logoutElement) => {
-  if (islogin().login === true) {
-    logoutElement.addEventListener("click", () => {
-      localStorage.removeItem("User");
-      window.location.href = "login.html";
-    });
+// Authotication function
+const setupAuthNav = (loginElement, logoutElement) => {
+  const userStatus = islogin();
+
+  if (userStatus.login === false) {
+    if (loginElement) loginElement.style.display = "block";
+    if (logoutElement) logoutElement.style.display = "none";
   } else {
-    logoutElement.style.display = "none";
+    if (userStatus.login === true) {
+      if (loginElement) loginElement.style.display = "none";
+      if (logoutElement) logoutElement.style.display = "block";
+
+      if (logoutElement) {
+        logoutElement.addEventListener("click", () => {
+          localStorage.removeItem("User");
+          window.location.href = "login.html";
+        });
+      }
+    }
   }
 };
 
@@ -37,4 +47,4 @@ const handleSearch = (searchInput) => {
 };
 
 // Exports
-export { islogin, logout, handleSearch };
+export { islogin, setupAuthNav, handleSearch };
