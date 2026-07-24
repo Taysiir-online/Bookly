@@ -56,7 +56,7 @@ const getDetail = async () => {
       </div>
       <div class="book-details">
         <nav class="library">
-          Library <i class="fa-solid fa-chevron-right"></i> fiction
+          Books <i class="fa-solid fa-chevron-right"></i> ${detail.title.substring(0, 50)}
         </nav>
         <h1 class="title">${detail.title.substring(0, 50)}...</h1>
         <h3 class="author">${detail.authors.map((author) => author.name).join(" ")}</h3>

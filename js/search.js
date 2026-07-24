@@ -3,6 +3,7 @@ import { islogin, setupAuthNav, handleSearch } from "/js/main.js";
 const logIn = document.querySelector("div.btn_log");
 const logOut = document.querySelector("div.logout > button");
 const UserProfile = document.querySelector("div.profile");
+const Showing = document.querySelector("div.head-left");
 setupAuthNav(logIn, logOut, UserProfile);
 // get search input
 const searchInput = document.querySelectorAll('input[type="search"]');
@@ -26,7 +27,6 @@ const grid = document.querySelector("main.books-grid");
 
 const params = new URLSearchParams(window.location.search);
 const result = params.get("q");
-
 // Loading
 let loading = document.querySelector("div.loading");
 let load = true;
@@ -37,6 +37,23 @@ if (loading) {
 if (!result) {
   grid.innerHTML = "<p>Please enter a search term.</p>";
 }
+
+const showing = () => {
+  if (result) {
+    Showing.innerHTML = `
+    <h2>Search Results</h2>
+    <p class="Showing">Showing results for "${result}"</p>
+   `;
+  } else {
+    Showing.innerHTML = `
+    <h2>Search Results</h2>
+    <p class="Showing">Please enter a search term.</p>
+   `;
+  }
+};
+
+showing();
+
 async function searchBooks() {
   try {
     const response = await fetch(`https://gutendex.com/books?search=${result}`);
