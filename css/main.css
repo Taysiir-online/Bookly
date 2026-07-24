@@ -163,33 +163,37 @@ div.navbar nav div.right-side div.btn_log {
 div.navbar nav div.right-side div.btn_log button {
   display: block;
   padding: 8px 12px;
-  border: 1px solid var(--border-color);
-  /* background-color: var(--background-color-secondary); */
+  border: none;
+  background-color: var(--primary-color);
   font-size: 12px;
   font-family: P2;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
 }
 div.navbar nav div.right-side div.btn_log button a {
   text-decoration: none;
-  color: var(--text-muted);
+  color: var(--surface-white);
   font-family: P2;
   font-size: 12px;
 }
 div.navbar nav div.right-side div.btn_log button:hover {
-  background-color: var(--primary-color-hover);
+  background-color: var(--primary-hover);
 }
 div.navbar nav div.right-side div.logout button {
   display: block;
   padding: 8px 12px;
-  border: none;
-  background-color: var(--primary-color);
-  color: var(--surface-white);
+  border: 1px solid var(--border-color);
+  /* background-color: var(--primary-color); */
+  color: var(--primary-color);
   font-size: 12px;
-  font-family: P2;
+  font-family: P1;
+  font-weight: 800;
   border-radius: 8px;
   cursor: pointer;
   margin: 0 10px;
+}
+div.navbar nav div.right-side div.logout button:hover {
+  background-color: var(--background-color-secondary);
 }
 
 /* Bar Icon */
@@ -214,7 +218,6 @@ div.navbar nav div.right-side div.MobileNav {
   width: 100%;
   position: absolute;
   top: 80px;
-  left: 0;
   padding: 15px 15px;
   background-color: var(--Cadaan);
   visibility: hidden;
@@ -223,6 +226,61 @@ div.navbar nav div.right-side div.MobileNav {
   transition: all 0.6s ease-in-out;
   z-index: 999;
 }
+div.navbar nav div.right-side div.MobileNav ul.Mobile_link {
+  /* width: 100%; */
+  height: 50px;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: nowrap row;
+  list-style: none;
+}
+div.navbar nav div.right-side div.MobileNav ul.Mobile_link li {
+  margin: 0px 10px;
+}
+div.navbar nav div.right-side div.MobileNav ul.Mobile_link li a {
+  text-decoration: none;
+  color: var(--surface-white);
+  font-size: 14px;
+  font-family: P2;
+  font-weight: 400;
+  transition: all 0.5s ease-in-out;
+  border-bottom: solid 1.5px transparent;
+}
+div.navbar nav div.right-side div.MobileNav ul.Mobile_link li a:hover {
+  color: var(--text-color);
+  border-bottom: solid 1.5px var(--primary-hover);
+}
+div.navbar nav div.right-side div.MobileNav ul.Mobile_link li a.B {
+  color: var(--text-color);
+}
+div.navbar nav div.right-side div.MobileNav ul.Mobile_link li a.B:hover {
+  color: var(--surface-white);
+}
+
+/* div.navbar nav ul.links li {
+  margin: 0px 10px;
+}
+
+div.navbar nav ul.links li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 14px;
+  font-family: P2;
+  font-weight: 400;
+  transition: all 0.5s ease-in-out;
+  border-bottom: solid 1.5px transparent;
+}
+
+div.navbar nav ul.links li a:hover {
+  color: var(--text-color-secondary);
+  border-bottom: solid 1.5px var(--primary-hover);
+}
+
+div.navbar nav ul.links li a.B {
+  color: var(--primary-color);
+} */
 div.navbar nav div.right-side div.MobileNav.Active {
   visibility: visible;
   opacity: 1;
@@ -1816,7 +1874,10 @@ div.Clients div.Client div.form form button {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 0;
+    position: static;
   }
   div.navbar nav ul.links {
     display: none;
@@ -1824,25 +1885,36 @@ div.Clients div.Client div.form form button {
   div.navbar nav div.right-side div.searchinput {
     display: none;
   }
-  div.navbar nav div.right-side div.profile {
-    margin-left: auto;
-  }
   div.navbar nav div.right-side div.profile,
   div.navbar nav div.right-side div.btn_log {
     position: relative;
   }
+  div.navbar nav div.right-side div.btn_log,
+  div.navbar nav div.right-side div.logout {
+    width: auto;
+    margin: 0;
+  }
+  div.navbar nav div.right-side div.btn_log button,
+  div.navbar nav div.right-side div.logout button {
+    margin: 0;
+    padding: 8px 14px;
+  }
   div.navbar nav div.right-side {
     position: static;
-  }
-  div.navbar nav div.right-side div.btn_log {
-    margin-right: auto;
-    margin-left: 10px;
   }
   div.navbar nav div.right-side div.bar-icon {
     margin-left: 0;
   }
   div.navbar nav div.right-side div.logout button {
     margin: 0;
+  }
+  div.navbar nav div.right-side div.MobileNav ul.Mobile_link {
+    height: 120px;
+    justify-content: flex-start;
+    flex-flow: nowrap column;
+  }
+  div.navbar nav div.right-side div.MobileNav ul.Mobile_link li {
+    margin: 5px 0;
   }
 
   /* Bookly hero resp */
@@ -2078,12 +2150,8 @@ div.Clients div.Client div.form form button {
   div.navbar nav div.right-side {
     justify-content: flex-end;
   }
-  div.navbar nav div.right-side div.profile {
-    width: 35px;
-    height: 35px;
-  }
   div.navbar nav div.right-side div.searchinput input {
-    width: 200px;
+    width: 210px;
   }
   div.navbar nav div.right-side div.btn_log button {
     padding: 6px 10px;
