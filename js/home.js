@@ -19,10 +19,12 @@ searchInput.forEach((input) => {
 
 // Menu-bar activate
 const barIcon = document.querySelector("div.bar-icon");
-const mobileNav = document.querySelector("div.MobileNav");
-barIcon.addEventListener("click", () => {
-  mobileNav.classList.toggle("Active");
-});
+const MobileNav = document.querySelector("div.MobileNav");
+if (barIcon && MobileNav) {
+  barIcon.addEventListener("click", () => {
+    MobileNav.classList.toggle("Active");
+  });
+}
 
 let loading = document.querySelector("div.loading");
 let load = true;
