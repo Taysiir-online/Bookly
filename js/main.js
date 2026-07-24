@@ -14,12 +14,13 @@ const islogin = () => {
 };
 
 // Authotication function
-const setupAuthNav = (loginElement, logoutElement) => {
+const setupAuthNav = (loginElement, logoutElement, UserProfile) => {
   const userStatus = islogin();
 
   if (userStatus.login === false) {
     if (loginElement) loginElement.style.display = "block";
     if (logoutElement) logoutElement.style.display = "none";
+    if (UserProfile) UserProfile.style.display = "none";
   } else {
     if (userStatus.login === true) {
       if (loginElement) loginElement.style.display = "none";
@@ -46,5 +47,12 @@ const handleSearch = (searchInput) => {
   window.location.href = `search.html?q=${searchValue}`;
 };
 
+// dynamic year function
+const FooterYear = (yearElement) => {
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+};
+
 // Exports
-export { islogin, setupAuthNav, handleSearch };
+export { islogin, setupAuthNav, handleSearch, FooterYear };
