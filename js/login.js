@@ -1,3 +1,8 @@
+// imports
+import { FooterYear } from "/js/main.js";
+const year = document.querySelector("p.copy > span");
+FooterYear(year);
+
 // get form
 const form = document.querySelector("form");
 

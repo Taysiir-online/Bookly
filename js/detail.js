@@ -1,8 +1,10 @@
 // imports
-import { islogin, setupAuthNav, handleSearch } from "/js/main.js";
+import { islogin, setupAuthNav, handleSearch, FooterYear } from "/js/main.js";
 const logIn = document.querySelector("div.btn_log");
 const logOut = document.querySelector("div.logout > button");
 const UserProfile = document.querySelector("div.profile");
+const year = document.querySelector("p.copy > span");
+FooterYear(year);
 setupAuthNav(logIn, logOut, UserProfile);
 // get search input
 const searchInput = document.querySelectorAll('input[type="search"]');
@@ -46,7 +48,6 @@ const getDetail = async () => {
     if (response.ok) {
       const data = await response.json();
       const detail = data;
-      console.log(detail);
       load = false;
       if (loading) {
         loading.classList.remove("active");
@@ -56,7 +57,7 @@ const getDetail = async () => {
       </div>
       <div class="book-details">
         <nav class="library">
-          Library <i class="fa-solid fa-chevron-right"></i> fiction
+          books <i class="fa-solid fa-chevron-right"></i> ${detail.title.substring(0, 50)}
         </nav>
         <h1 class="title">${detail.title.substring(0, 50)}...</h1>
         <h3 class="author">${detail.authors.map((author) => author.name).join(" ")}</h3>
