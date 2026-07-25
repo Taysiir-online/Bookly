@@ -1,3 +1,8 @@
+// imports
+import { FooterYear } from "/js/main.js";
+const year = document.querySelector("p.Copy > span");
+FooterYear(year);
+
 const Password = document.getElementById("password");
 const Confirm = document.getElementById("Confirm");
 const form = document.querySelector("form");

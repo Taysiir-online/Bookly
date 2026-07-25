@@ -1,8 +1,10 @@
 // imports
-import { islogin, setupAuthNav, handleSearch } from "/js/main.js";
+import { islogin, setupAuthNav, handleSearch, FooterYear } from "/js/main.js";
 const logIn = document.querySelector("div.btn_log");
 const logOut = document.querySelector("div.logout > button");
 const UserProfile = document.querySelector("div.profile");
+const year = document.querySelector("p.copy > span");
+FooterYear(year);
 setupAuthNav(logIn, logOut, UserProfile);
 // get search input
 const searchInput = document.querySelectorAll('input[type="search"]');
@@ -27,15 +29,20 @@ const grid = document.querySelector("main.books-grid");
 const params = new URLSearchParams(window.location.search);
 const result = params.get("q");
 
+const SearchPram = document.querySelector("p.pram");
+if (result) {
+  SearchPram.innerHTML = `Showing results for "${result}"`;
+} else if (!result) {
+  SearchPram.innerHTML = "Showing results for 1-12 search term";
+  grid.innerHTML = `<div style = "text-align: center; color:  red; 
+         font-weight: bold; padding: 50px; ">Please enter a search term !</div>`;
+}
+
 // Loading
 let loading = document.querySelector("div.loading");
 let load = true;
 if (loading) {
   loading.classList.add("active");
-}
-
-if (!result) {
-  grid.innerHTML = "<p>Please enter a search term.</p>";
 }
 async function searchBooks() {
   try {
